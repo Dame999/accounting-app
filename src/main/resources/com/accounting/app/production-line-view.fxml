@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane minHeight="400" minWidth="600" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.accounting.app.controller.ProductionLineController">
+    <VBox fx:id="addNewProductionLineView" alignment="TOP_CENTER" layoutX="7.0" layoutY="18.4" prefHeight="364.0" prefWidth="1124.0" spacing="10" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+        <fx:include source="header.fxml" />
+            <Label text="Production line name" />
+            <TextField fx:id="productionLineNameLabel" maxWidth="200.0" promptText="Production line name" />
+            <CheckBox fx:id="insertTotalSumCheckBox" text="Insert total sum instead" />
+
+            <ScrollPane fx:id="employeesScrollPane" VBox.vgrow="ALWAYS">
+                <content>
+                    <HBox>
+                        <VBox spacing="5">
+                            <Label text="Selected Employees" />
+                            <ListView fx:id="selectedEmployeesListView" minWidth="425.0" />
+                        </VBox>
+                        <VBox spacing="5">
+                            <Label text="All Employees" />
+                            <ListView fx:id="fetchedEmployeesListView" minWidth="425.0" />
+                        </VBox>
+                    </HBox>
+                </content>
+            </ScrollPane>
+            <VBox fx:id="optionalFieldsContainer" alignment="CENTER" spacing="5">
+                <Label fx:id="numberOfPeopleFieldLabel" text="Number of people working on this productionLine" />
+                <TextField fx:id="numberOfPeopleField" maxWidth="200.0" promptText="Number of people" />
+                <Label fx:id="totalSalaryForUnknownEmployeesLabel" text="Total salary for the entered number of employees" />
+                <TextField fx:id="totalSalaryForUnknownEmployees" maxWidth="200.0" promptText="Total salary" />
+            </VBox>
+            <Label fx:id="totalSalaryProductionLineFieldLabel" text="Total salary for this productionLine" />
+            <TextField fx:id="totalSalaryProductionLineField" editable="false" maxWidth="200.0" />
+            <HBox alignment="CENTER" spacing="10">
+                <Button onAction="#newProductionLineButtonAction" text="NEW PRODUCTION LINE" />
+                <Button onAction="#createChannelAndSave" text="CREATE OR UPDATE" />
+                <Button onAction="#deleteProductionLineAction" text="DELETE SELECTED PRODUCTION LINE" />
+            </HBox>
+            <ScrollPane prefWidth="200.0">
+                <Label text="All ProductionLines" />
+                <ListView fx:id="fetchedProductionLineListView" prefHeight="406.0" prefWidth="850.0" />
+                <HBox.margin>
+                    <Insets bottom="200.0" />
+                </HBox.margin>
+            </ScrollPane>
+    </VBox>
+</AnchorPane>

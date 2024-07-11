@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.accounting.app.controller.GlobalReportController"
+            prefHeight="400.0" prefWidth="600.0">
+    <HBox alignment="CENTER">
+        <TextField fx:id="totalSalary" disable="true" />
+        <TextField fx:id="totalIncome" disable="true" />
+        <TextField fx:id="totalProfit" disable="true" />
+    </HBox>
+    <ScrollPane layoutY="114.4" prefHeight="290.0" prefWidth="569.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="130.0">
+        <GridPane fx:id="globalDataGridPane">
+            <columnConstraints>
+                <ColumnConstraints halignment="CENTER" percentWidth="15" />
+                <ColumnConstraints halignment="CENTER" percentWidth="70" />
+                <ColumnConstraints halignment="CENTER" percentWidth="20" />
+                <ColumnConstraints halignment="CENTER" percentWidth="20" />
+                <ColumnConstraints halignment="CENTER" percentWidth="30" />
+                <ColumnConstraints halignment="CENTER" percentWidth="30" />
+                <ColumnConstraints halignment="CENTER" percentWidth="50" />
+                <ColumnConstraints halignment="CENTER" percentWidth="50" />
+                <ColumnConstraints halignment="CENTER" percentWidth="50" />
+                <ColumnConstraints halignment="CENTER" percentWidth="30" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints />
+            </rowConstraints>
+        </GridPane>
+    </ScrollPane>
+</AnchorPane>
